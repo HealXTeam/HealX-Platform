@@ -288,7 +288,7 @@ nav a:hover, nav a.active {
 .timer {
     background: var(--primary);
     color: white;
-    padding: 5px 15px;
+    padding: 15px 15px;
     border-radius: 30px;
     font-weight: 700;
     font-size: 1.1rem;
