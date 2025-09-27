@@ -290,8 +290,8 @@ nav a:hover, nav a.active {
     color: white;
     padding: 15px 15px;
     border-radius: 30px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .progress-container {
