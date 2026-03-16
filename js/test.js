@@ -488,7 +488,7 @@ function showQuestion(index) {
     
     for (let i = 0; i < 5; i++) {
         const letter = optionLetters[i];
-        const optionKey = String.fromCharCode(97 + i); // a, b, c, d , e
+        const optionKey = String.fromCharCode(97 + i); // a, b, c, d, e
         const isSelected = appState.answers[index] === optionKey;
         
         if (question[optionKey]) { // فقط إذا كان الخيار موجوداً
