@@ -1,0 +1,57 @@
+{
+  "name": "منصة فريق HealX التعليمية",
+  "short_name": "HealX",
+  "description": "منصة تعليمية طبية تفاعلية لطلاب المجمع الطبي",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#A72024",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "ar",
+  "dir": "rtl",
+  "screenshots": [
+    {
+      "src": "images/healx-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/healx-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "images/healx-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/healx-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "medical"],
+  "shortcuts": [
+    {
+      "name": "الاختبارات",
+      "short_name": "اختبارات",
+      "description": "الدخول المباشر لصفحة الاختبارات",
+      "url": "./index.html#tests",
+      "icons": [
+        {
+          "src": "images/healx-logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
