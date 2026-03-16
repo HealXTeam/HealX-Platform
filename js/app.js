@@ -20,6 +20,8 @@ let appState = {
 
 // تهيئة التطبيق عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
+    //لضمان أن الصفحة الرئيسية هي نقطة البداية في المتصفح
+    history.replaceState({page: 'home'}, null, "");
     // تعيين سنة حقوق النشر
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
