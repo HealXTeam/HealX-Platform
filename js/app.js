@@ -139,7 +139,7 @@ function updateTestsStatusUI() {
     
     const info = getCachedTestsInfo();
     if (info.isCached) {
-        statusElement.innerHTML = `✅ آخر تحديث: ${info.dateString}`;
+        statusElement.innerHTML = ` آخر تحديث: ${info.dateString}`;
         statusElement.style.color = 'var(--success-color)';
     } else {
         statusElement.innerHTML = 'لم يتم تحميل الاختبارات بعد';
