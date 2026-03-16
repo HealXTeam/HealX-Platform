@@ -54,11 +54,36 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add('active');
     appState.currentPage = pageId;
     
+    // إخبار المتصفح أننا انتقلنا لصفحة جديدة لكي يعمل زر الرجوع
+    history.pushState({page: pageId}, null, "");
+    
     // إجراءات خاصة بكل صفحة
     if (pageId === 'tests') {
         renderTestsPage();
     }
 }
+
+// مراقبة الضغط على زر الرجوع في المتصفح أو الهاتف
+window.onpopstate = function(event) {
+    if (event.state && event.state.page) {
+        // إذا كان هناك صفحة مسجلة في التاريخ، نفتحها
+        const targetPage = event.state.page;
+        
+        // إخفاء الكل وإظهار الصفحة المطلوبة
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById(targetPage).classList.add('active');
+
+        // تحديث شكل القائمة العلوية (الرابط النشط)
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[data-page="${targetPage}"]`);
+        if (activeLink) activeLink.classList.add('active');
+    } else {
+        // إذا عاد لأول صفحة (الرئيسية)
+        showPage('home');
+    }
+};
 
 // جعل الدوال متاحة عالمياً
 window.setupEventListeners = setupEventListeners;
