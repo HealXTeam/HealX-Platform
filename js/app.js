@@ -1,6 +1,6 @@
 // إعدادات التطبيق
 const CONFIG = {
-    API_BASE: 'https://script.google.com/macros/s/AKfycbyx1cC5Zv4vbXJSxumbKlRgCqdOomm57HplErJnEg_tkWL73nkBtsJ_SpIX8oBlyhCH/exec',
+    API_BASE: 'https://script.google.com/macros/s/AKfycbxQGT4ciiniFvr-Ro_X1dBDPca6YKGiAReOe-f0yoENARMtsTpRmZ97_mKvk1U4o2Hr/exec',
     SUPPORT_EMAIL: 'healxteam@gmail.com',
     DEFAULT_TIMER_SECONDS: 3600,
 };
