@@ -24,10 +24,6 @@
   - تخزين في قاعدة بيانات محلية (IndexedDB) للبيانات الكبيرة
   - Service Worker لتخزين الأصول الثابتة
 
-- 📊 **إحصائيات وتتبع**:
-  - عداد الزيارات التفاعلي
-  - حفظ نتائج الاختبارات تاريخياً
-  - معلومات تفصيلية عن الأداء
 
 - 🎨 **واجهة مستخدم احترافية**:
   - تصميم استجابي (Responsive Design)
@@ -69,21 +65,7 @@ python -m http.server 8000
 http://localhost:8000
 ```
 
-#### 2️⃣ **للنشر على GitHub Pages (الإنتاج)**
-
-```bash
-# غيّر اسم المستودع إلى: username.github.io
-# أو فعّل GitHub Pages من الإعدادات
-# ثم push الملفات
-
-git add .
-git commit -m "Initial HealX Platform"
-git push origin main
-```
-
-ثم افتح: `https://yourusername.github.io`
-
-#### 3️⃣ **كتطبيق محلي**
+#### 2️⃣ **كتطبيق محلي**
 - افتح الموقع في متصفحك
 - اضغط على قائمة المتصفح (≡) 
 - اختر "Install HealX" أو "Add to Home Screen"
@@ -107,8 +89,6 @@ HealX-Platform/
 │   └── support.js         # صفحة الدعم
 ├── images/                # الصور والشعارات
 ├── PWA_README.md          # توثيق PWA المفصل
-├── QUICK_START.md         # دليل البدء السريع
-├── .gitignore            # تجاهل الملفات
 └── README.md             # هذا الملف
 ```
 
@@ -131,15 +111,6 @@ HealX-Platform/
 - حفظ تلقائي للاختبارات الجديدة
 - استخدام البيانات المخزنة عند قطع الإنترنت
 
-### ✅ قاعدة بيانات محلية
-```
-IndexedDB (HealXDB v1)
-├── visitors        → تتبع الزيارات
-├── cachedTests     → الأسئلة المحفوظة
-├── testResults     → النتائج المحفوظة
-└── pendingRequests → الطلبات المعلقة
-```
-
 ### ✅ التخزين المحلي
 ```
 localStorage
@@ -157,15 +128,6 @@ localStorage
 - هيكل الاختبارات (الفروع، السنوات، الفصول، المواد)
 - الأسئلة والخيارات
 - الإجابات الصحيحة
-
-**الاتصال يتم من خلال:**
-```javascript
-CONFIG.API_BASE = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'
-```
-
-تحديث الـ Script ID في `js/app.js` بـ ID خادمك.
-
----
 
 ## 🛡️ الأمان والخصوصية
 
