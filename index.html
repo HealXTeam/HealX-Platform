@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#A72024">
+    <meta name="description" content="منصة HealX التعليمية - اختبارات وتدريب طبي تفاعلي">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HealX">
+    <meta name="application-name" content="منصة HealX">
+    <meta property="og:title" content="منصة فريق HealX">
+    <meta property="og:description" content="منصة تعليمية طبية متكاملة">
+    <meta property="og:image" content="images/healx-logo.png">
+    
+    <title>منصة فريق HealX</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple Icons -->
+    <link rel="apple-touch-icon" href="images/healx-logo.png">
+    <link rel="icon" type="image/png" href="images/healx-logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- شاشة البداية -->
+    <div id="intro-screen">
+        <div class="logo-intro">
+            <div class="logo-icon-large">
+                <img src="images/healx-logo.png" alt="شعار HealX" class="custom-logo">
+            </div>
+            <div class="logo-text-large">
+                <h1>منصة فريق HealX</h1>
+                <span>نخطط، نتعاون، ونحدث فرقاً!  </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- إشعار التحميل العائم -->
+    <div id="loading-toast" class="loading-toast" style="display: none;">
+        <div class="loading-toast-content">
+            <div class="spinner"></div>
+            <span>جارٍ تحميل الأسئلة...</span>
+        </div>
+    </div>
+
+    <!-- زر العودة لأعلى -->
+    <!--button id="scroll-to-top" class="scroll-to-top" title="العودة لأعلى" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>-->
+
+    <!-- المحتوى الرئيسي -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="images/healx-logo.png" alt="شعار HealX" class="custom-logo-small">
+                    </div>
+                    <div class="logo-text">
+                        <h1>منصة فريق HealX</h1>
+                        <span>  </span>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> <span>الرئيسية</span> </a></li>
+                        <li><a href="#" class="nav-link" data-page="tests"><i class="fas fa-clipboard-list"></i> <span>الاختبارات</span> </a></li>
+                        <li><a href="#" class="nav-link" data-page="about"><i class="fas fa-info-circle"></i> <span>معلومات</span>  </a></li>
+
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- الصفحة الرئيسية -->
+            <section id="home" class="page active">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">مرحباً بك في منصة فريق HealX</h2>
+                    </div>
+                    <p>منصة متكاملة  تعليمية طبية تفاعلية، مصممة خصيصاً لطلاب المجمع الطبي لمساعدتهم في رحلتهم الدراسية.</p>
+                    <div class="grid" style="margin-top: 2rem;">
+                        <div class="grid-item" data-page="tests">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>الاختبارات</h3>
+                            <p>اختبر معلوماتك في مختلف المواد الدراسية</p>
+                        </div>
+                        <div class="grid-item" data-page="about">
+                            <i class="fas fa-user-md"></i>
+                            <h3> من نحن؟ </h3>
+                            <p>تعرف على فريق HealX </p>
+                        </div>
+                        <div class="grid-item" data-page="support">
+                            <i class="fas fa-headset"></i>
+                            <h3>تواصل مع الدعم</h3>
+                            <p>لديك استفسار أو تحتاج مساعدة؟</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">توصيات واقتراحات </h2>
+                    </div>
+                    <p style="text-align: center; padding: 2rem; color: var(--gray);">    <i class="fab fa-telegram"></i> تابع قناتنا على تلغرام لتبقى على اطلاع بجميع المستجدات و أعمال الفريق من محاضرات و اختبارات و غيرها الكثير  <a href="https://t.me/HealX_Team" target="_blank" style="color: #940004" >من هنا  </a> </p>
+                </div>
+            </section>
+
+            <!-- صفحة الاختبارات -->
+            <section id="tests" class="page">
+                <div class="breadcrumb">
+                    <a href="#" data-page="home">الرئيسية</a> <i class="fas fa-chevron-left"></i> <span>الاختبارات</span>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">اختر الاختبار المناسب</h2>
+                    </div>
+                    <div id="tests-content">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>جارٍ تحميل هيكل الاختبارات...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- صفحة الاختبار النشط -->
+            <section id="test-active" class="page">
+                <div class="breadcrumb">
+                    <a href="#" data-page="tests">الاختبارات</a> <i class="fas fa-chevron-left"></i> <span id="test-breadcrumb">اختبار</span>
+                </div>
+                
+                <div class="test-container">
+                    <div class="test-header">
+                        <h2 id="test-title">اختبار</h2>
+                        <div class="test-info">
+                            <span id="test-meta">الوحدة: </span>
+                            <div class="timer" id="timer">60:00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-text" style="text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem;"></div>
+                    
+                    <div id="questions-list-container"></div>
+
+                    <!-- زر إنهاء الاختبار العائم الصغير (اختصار سريع) -->
+                    <button id="finish-mini-btn" class="floating-action-btn-mini" title="إنهاء الاختبار (اختصار)" aria-label="إنهاء الاختبار">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- صفحة النتائج -->
+            <section id="results" class="page">
+                <div class="breadcrumb">
+                    <a href="#" data-page="tests">الاختبارات</a> <i class="fas fa-chevron-left"></i> <span>النتائج</span>
+                </div>
+                
+                <div class="results-container">
+                    <div class="card">
+                        <h2>نتيجة الاختبار</h2>
+                        <div class="score-circle" id="score-circle">
+                            <div class="score-inner">
+                                <div class="score-value" id="score-value">0/0</div>
+                                <div class="score-text" id="score-text">0%</div>
+                            </div>
+                        </div>
+                        
+                        <div id="result-message"></div>
+                        
+                        <div style="margin: 2rem 0;">
+                            <button class="btn btn-primary" id="review-btn">
+                                <i class="fas fa-list"></i> مراجعة الإجابات
+                            </button>
+                            <button class="btn btn-secondary" id="back-to-tests">
+                                <i class="fas fa-arrow-right"></i> العودة للاختبارات
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card" id="review-section" style="display: none;">
+                        <div class="card-header">
+                            <h2 class="card-title">مراجعة الإجابات</h2>
+                        </div>
+                        <div id="review-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- صفحة عن المالك -->
+            <section id="about" class="page">
+                <div class="breadcrumb">
+                    <a href="#" data-page="home">الرئيسية</a> <i class="fas fa-chevron-left"></i> <span>عن الفريق</span>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">حول فريق HealX</h2>
+                    </div>
+                    <p>فريق HealX هو فريق تطوعي طبي يهدف إلى تقديم خدمات تعليمية وتدريبية لطلاب المجمع الطبي، ويسعى لتحسين جودة التعليم الطبي من خلال أدوات تفاعلية مبتكرة.</p>
+                    
+                    <div class="about-content">
+                        <div class="about-section">
+                            <h3>رؤية الفريق</h3>
+                            <p>نسعى لأن نكون الرواد في تقديم حلول تعليمية طبية مبتكرة تساهم في رفع كفاءة الطلاب وتطوير مهاراتهم العملية.</p>
+                        </div>
+                        
+                        <div class="about-section">
+                            <h3>رسالة الفريق</h3>
+                            <p>تطوير منصات تعليمية تفاعلية تواكب التطورات في المجال الطبي وتلبي احتياجات الطلاب في مختلف التخصصات.</p>
+                        </div>
+                         <div class="about-section">
+                            <h3>ملاحظة هامة </h3>
+                            <p>المنصة حالياً بنسختها التجريبية ولا  تزال قيد التطوير <i class ="fas fa-cogs"></i></p>
+                        <p>ادعمنا لنستمر <i class="fas fa-heart"></i> </p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h3>لائحة الشرف - متطوعين في الفريق - فرع كلية الطب البشري </h3>
+                        <div class="grid">
+                            <div class="grid-item">
+                                <i class="fas fa-crown"></i>
+                                <h4>إدارة فرع كلية الطب البشري</h4>
+                                <p>ستعلن قائمة الإدارة قريباً</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-trophy"></i>
+                                <h4>أبطال الفريق</h4>
+                                <p>د.بكر أبو العيال</p>
+                                <p>د.سلمى حسيان</p>
+                                <p>د.محمد عمر السيوفي</p>
+                                <p>د.يارا الأسعد</p>
+                                <p>د.ياسين تامر </p>                                
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>الدعم العلمي</h4>
+                                <p>د.أحمد حسن</p>
+                                <p>د.بكر أبو العيال</p>                                
+                                <p>د.شآم العلي</p>
+                                <p>د.لجين طراف</p>
+                                <p>د.ليث محمود</p>
+                                <p>د.مجد الدين الخطيب</p>
+                                <p>د.نور الهدى قيس</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-pen"></i>
+                                <h4>التفريغ</h4>                                
+                                <p>د.ايمان خليفة</p>
+                                <p>د.جودي البدر</p>                                
+                                <p>د.سدرة حامد</p>
+                                <p>د.علي عفيفة</p>
+                                <p>د.يارا الأسعد</p>                                
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-check-to-slot"></i>
+                                <h4>اختبارات</h4>
+                                <p>د.فهمي زيني</p>
+                                <p>د.ياسين تامر</p>
+                            </div>
+                            
+                            <div class="grid-item">
+                                <i class="fas fa-search"></i>
+                                <h4>البحث و التدقيق</h4>
+                                <p>د.ايمان زيدان</p>
+                                <p>د.زين القطة</p>
+                                <p>د.رولا ادريس</p>
+                                <p>د.يزن عبدالله</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-laptop"></i>
+                                <h4>التنسيق و التنضيد</h4>
+                                <p>د.سنا سلومي</p>
+                                <p>د.لانا الأصفر</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-gift"></i>
+                                <h4>أعضاء غادروا ولهم أثر باق</h4>
+                                <p>د.أسماء كنجو</p>
+                                <p>د.بكر أبو العيال</p>
+                                <p>د.حسين رمضان</p>
+                                <p>د.شعيب ادريس</p>
+                                <p>د.رغد الأكرم</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-section">
+                        <h3>لائحة الشرف - متطوعين في الفريق - فرع كلية الأسنان </h3>
+                        <div class="grid">
+                            <div class="grid-item">
+                                <i class="fas fa-crown"></i>
+                                <h4>إدارة فرع كلية طب الأسنان</h4>
+                                <p>د.نجيب شعبان (المدير الفعلي)</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-trophy"></i>
+                                <h4>أبطال الفريق</h4>
+                                <p>د.رغد الجمال</p>
+                                <p>د.سليمان الأحمد</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>الدعم العلمي</h4>
+                                <p>د.شهد الخليل</p>
+                                <p>د.كول بهار حاج أوغلو</p>
+                                <p>د.نغم المصري</p>
+                                <p>د.مرح خلوف</p>
+                            </div>
+                            <div class="grid-item">
+                                <i class="fas fa-pen"></i>
+                                <h4>التفريغ</h4>
+                                <p>د.جويل علي </p>
+                                <p>د.شهد يوسف </p>
+                            </div>
+                            
+                            <div class="grid-item">
+                                <i class="fas fa-search"></i>
+                                <h4>البحث و التدقيق</h4>
+                                <p>د.نايا عنقة</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- صفحة تواصل مع الدعم -->
+            <section id="support" class="page">
+                <div class="breadcrumb">
+                    <a href="#" data-page="home">الرئيسية</a> <i class="fas fa-chevron-left"></i> <span>تواصل مع الدعم</span>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">تواصل مع فريق الدعم</h2>
+                    </div>
+                    <p>نحن هنا لمساعدتك! إذا كان لديك أي استفسار أو واجهت أي مشكلة في استخدام المنصة، فلا تتردد في التواصل معنا.</p>
+                    <p><br></p>
+                    <div class="grid contact-methods">
+                        <div class="grid-item">
+                            <i class="fas fa-envelope"></i>
+                            <h3>البريد الإلكتروني</h3>
+                            <div class="contact-method">
+                                <span>healxteam@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <h3>واتساب</h3>
+                            <div class="contact-method">
+                                <span> +963-954281853 </span>
+                            </div>
+                            <small>متاح خلال أوقات العمل</small>
+                        </div>
+                        <div class="grid-item">
+                            <i class="fas fa-clock"></i>
+                            <h3>أوقات العمل</h3>
+                            <div class="contact-method">
+                                <span>8:00 ص - 4:00 م</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>أرسل رسالة</h3>
+                        <form id="support-form">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">الموضوع</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">الرسالة</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- مودال اختيار وضع الاختبار -->
+    <div id="mode-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">اختر وضع الاختبار</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <button class="btn btn-primary" id="practice-mode-btn" style="padding: 15px; font-size: 1.1rem;">
+                    <i class="fas fa-dumbbell"></i> وضع التدريب
+                    <small style="display: block; font-size: 0.85rem; margin-top: 5px;">تحقق فوري من الإجابات • لا يمكن تعديل الإجابة</small>
+                </button>
+                <button class="btn btn-secondary" id="exam-mode-btn" style="padding: 15px; font-size: 1.1rem;">
+                    <i class="fas fa-edit"></i> وضع الامتحان
+                    <small style="display: block; font-size: 0.85rem; margin-top: 5px;">تعديل حر للإجابات • تحقق عند الانتهاء</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال التنبيهات -->
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title" style="margin-bottom: 1rem; color: var(--primary);"></h2>
+            <p id="modal-message" style="margin-bottom: 1.5rem; color: var(--text-secondary);"></p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button class="btn btn-primary" id="modal-confirm">موافق</button>
+                <button class="btn btn-secondary" id="modal-cancel">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال تحديث التطبيق -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1rem; color: var(--primary);">
+                <i class="fas fa-download" style="margin-left: 10px;"></i>
+                تحديث جديد متاح!
+            </h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                تم إصدار نسخة جديدة من المنصة مع تحسينات ومميزات جديدة.
+                هل تريد تحديث التطبيق الآن؟
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button class="btn btn-primary" id="update-confirm">
+                    <i class="fas fa-sync-alt"></i> تحديث الآن
+                </button>
+                <button class="btn btn-secondary" id="update-later">
+                    <i class="fas fa-clock"></i> لاحقاً
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; <span id="current-year"></span> منصة فريق HealX</p>
+        </div>
+    </footer>
+
+    <!-- Modal للتحذيرات -->
+    <div class="modal" id="alert-modal">
+        <div class="modal-content">
+            <h3 id="modal-title">تنبيه</h3>
+            <p id="modal-message">هذه رسالة تنبيه.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="modal-confirm">موافق</button>
+                <button class="btn btn-secondary" id="modal-cancel">إلغاء</button>
+            </div>
+        </div>
+    </div>
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- زر العودة لأعلى -->
+    <button id="scroll-to-top" class="scroll-to-top" title="العودة لأعلى" aria-label="العودة لأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/support.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js').then(function(registration) {
+                    console.log('Service Worker تم التسجيل بنجاح:', registration);
+
+                    // التحقق من التحديثات
+                    registration.addEventListener('updatefound', function() {
+                        const newWorker = registration.installing;
+                        console.log('تم العثور على تحديث جديد');
+
+                        newWorker.addEventListener('statechange', function() {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // تحديث جديد متاح
+                                showUpdateNotification();
+                            }
+                        });
+                    });
+
+                    // إذا كان SW جديد ينتظر
+                    if (registration.waiting) {
+                        showUpdateNotification();
+                    }
+
+                }, function(err) {
+                    console.log('فشل تسجيل Service Worker:', err);
+                });
+            });
+        }
+
+        // عرض إشعار التحديث
+        function showUpdateNotification() {
+            const updateModal = document.getElementById('update-modal');
+            updateModal.style.display = 'flex';
+
+            document.getElementById('update-confirm').addEventListener('click', function() {
+                // إرسال رسالة لـ SW لتفعيل النسخة الجديدة
+                navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+                updateModal.style.display = 'none';
+                // إعادة تحميل الصفحة
+                window.location.reload();
+            });
+
+            document.getElementById('update-later').addEventListener('click', function() {
+                updateModal.style.display = 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>
