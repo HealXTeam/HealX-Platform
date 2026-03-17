@@ -1,6 +1,6 @@
 # 🏥 منصة فريق HealX - منصة تعليمية طبية تفاعلية
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red)]()
 
 ## 📌 نبذة عن المشروع
@@ -197,7 +197,10 @@ git push origin feature/amazing-feature
 
 ## 📄 الترخيص
 
-هذا المشروع مرخص تحت **MIT License** - انظر [LICENSE](./LICENSE) للتفاصيل.
+هذا المشروع مرخص تحت رخصة **GNU General Public License v3.0 (GPLv3)**. 
+هذا يعني أن أي نسخة مشتقة من هذا الكود أو تعديلات عليه يجب أن تظل مفتوحة المصدر وتحت نفس الرخصة.
+انظر ملف [LICENSE](./LICENSE) للحصول على النص الكامل للرخصة.
+
 
 ---
 
@@ -213,7 +216,8 @@ git push origin feature/amazing-feature
 
 ![GitHub Stars](https://img.shields.io/github/stars/HealX-Team/HealX-Platform?style=social)
 ![GitHub Forks](https://img.shields.io/github/forks/HealX-Team/HealX-Platform?style=social)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-GPLv3-blue)
+
 
 ---
 
