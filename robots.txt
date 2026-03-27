@@ -5,7 +5,7 @@ Allow: /css/
 Allow: /js/
 Allow: /images/
 Disallow: /js/sw.js
-Sitemap: https://example.com/sitemap.xml
+#Sitemap: https://example.com/sitemap.xml
 
 # Comments
 # This is the robots.txt file for HealX Platform
