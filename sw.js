@@ -1,5 +1,5 @@
 // Service Worker للعمل بدون اتصال والتخزين المؤقت - نسخة مطورة لتحديث الاختبارات
-const CACHE_NAME = 'healx-app-v1.0.6'; 
+const CACHE_NAME = 'healx-app-v1.0.7'; 
 
 const urlsToCache = [
   './',
