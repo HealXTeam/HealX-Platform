@@ -558,19 +558,29 @@
         // عرض إشعار التحديث
         function showUpdateNotification() {
             const updateModal = document.getElementById('update-modal');
+            const confirmBtn = document.getElementById('update-confirm');
+            const laterBtn = document.getElementById('update-later');
+        
             updateModal.style.display = 'flex';
-
-            document.getElementById('update-confirm').addEventListener('click', function() {
-                // إرسال رسالة لـ SW لتفعيل النسخة الجديدة
-                navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
-                updateModal.style.display = 'none';
-                // إعادة تحميل الصفحة
+        
+            // الاستماع لحدث استبدال الـ Service Worker وإعادة التحميل فقط عند التفعيل الفعلي
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
                 window.location.reload();
             });
-
-            document.getElementById('update-later').addEventListener('click', function() {
+        
+            // استخدام { once: true } لمنع تراكم الـ Event Listeners
+            confirmBtn.addEventListener('click', function () {
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+                } else {
+                    window.location.reload();
+                }
                 updateModal.style.display = 'none';
-            });
+            }, { once: true });
+        
+            laterBtn.addEventListener('click', function () {
+                updateModal.style.display = 'none';
+            }, { once: true });
         }
     </script>
 
