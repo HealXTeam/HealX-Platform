@@ -51,20 +51,28 @@ self.addEventListener('fetch', event => {
 
   const request = event.request;
   const url = request.url;
-
   // --- الحالة الأولى: طلبات الاختبارات والبيانات (Network First) ---
   if (url.includes('test') || url.includes('.json') || url.includes('script.google.com')) {
     event.respondWith(
-      fetch(request)
+      fetch(event.request)
         .then(response => {
-          // حفظ النسخة الجديدة فقط إذا كان الطلب من نوع GET
-          if (request.method === 'GET' && (response.status === 200 || response.status === 0)) {
+          if (event.request.method === 'GET' && response.status === 200) {
             const responseToCache = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(request, responseToCache));
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
           }
           return response;
         })
-        .catch(() => caches.match(request))
+        .catch(async () => {
+          // محاولة جلب النسخة المخزنة
+          const cachedResponse = await caches.match(event.request);
+          if (cachedResponse) return cachedResponse;
+          
+          // في حال عدم وجود شبكة وعدم وجود كاش سابق، إرجاع استجابة JSON بديلة تفادياً للانهيار
+          return new Response(JSON.stringify({ error: true, message: "Offline and no cache" }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/json' }
+          });
+        })
     );
   } 
   
